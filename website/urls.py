@@ -22,7 +22,7 @@ urlpatterns = [
     # path('gamers/', include('gamers.urls')),
     # path('hunt/', include('hunt.urls')),
     # path('quiz/', include('quiz.urls')),
-    path('qr/', include('qr.urls')),
+    # path('qr/', include('qr.urls')),
     path('accounts/',include('allauth.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
