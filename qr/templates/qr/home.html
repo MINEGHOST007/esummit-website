@@ -6,22 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Summit'24 | QR Hunt</title>
-    <link rel="stylesheet" href="{% static 'base/css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'qr/css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'qr/css/qr.css' %}">
+    <link rel="stylesheet" href="{% static 'qr/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'qr/css/bootstrap.min.css'%}" />
+<link rel="stylesheet" href="{% static 'qr/css/style_em.css'%}" />
+<link rel="stylesheet" href="{% static 'qr/css/tailwind.css' %}" />
     <link rel="shortcut icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon" id="faviconTag">
-    <!-- Google font files -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#282319] font-Laila">
+<body class="bg-class font-Laila">
     {% include 'qr/navbar.html' %}
     {% include 'qr/toaster.html' %}
-    <header style="background-image: linear-gradient(90deg, rgba(167, 84, 1, 0.609), rgba(0, 29, 173, 0.621))," class="w-full min-h-screen animation grid place-items-center text-orange-300">
+    <header class="w-full min-h-screen animation grid place-items-center text-white">
         <div class="place-items-center my-auto container mx-auto px-8 py-12">
         <div class="mx-auto">
             <div class="w-fit mx-auto">
-                <h1 class="text-6xl text-center font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-zinc-50 to-amber-400 py-16">{{msg}}</h1>
+                <h1 class="text-6xl text-center font-bold uppercase text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-purple-400 py-16">{{msg}}</h1>
             </div>
             <div class="grid grid-cols-2 lg:grid-cols-3 list-none text-center gap-2" id="counter">
                 <li class="uppercase text-lg"><span id="days" class="text-xl lg:text-5xl font-bold">0</span>Days</li>
@@ -39,16 +43,17 @@
             {% if user.is_authenticated %}
             <div class="flex flex-wrap justify-center w-full md:px-48 md:justify-between align-middle gap-2 mt-6">
                 
-                <a href="{% url 'qr:profile' %}" class="md:text-xl bg-gradient-to-tr from-yellow-600 to-yellow-200 text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase">Profile</a>
-                <a href="{% url 'qr:leaderboard' %}" class="md:text-xl bg-gradient-to-tr from-yellow-600 to-yellow-200 text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase">Leaderboard</a>
-                <a href="{% url 'qr:scanner' %}" class="md:text-xl bg-gradient-to-tr from-yellow-600 to-yellow-200 text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase">Scan</a>
+                <a href="{% url 'qr:profile' %}" class="md:text-xl text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase custom-btn" >Profile</a>
+                <a href="{% url 'qr:leaderboard' %}" class="md:text-xl text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase custom-btn" >Leaderboard</a>
+                <a href="{% url 'qr:scanner' %}" class="md:text-xl text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase custom-btn" >Scan</a>
             </div>
             {% else %}
             <div class="flex flex-wrap justify-around w-full md:px-48 align-middle gap-2 mt-6">
-                <a href="{% url 'qr:profile' %}" class="md:text-xl bg-gradient-to-tr from-yellow-600 to-yellow-200 text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase">Register</a>
-                <a href="{% url 'qr:leaderboard' %}" class="md:text-xl bg-gradient-to-tr from-yellow-600 to-yellow-200 text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase">Leaderboard</a>
+                <a href="{% url 'qr:profile' %}" class="md:text-xl text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase custom-btn" >Register</a>
+                <a href="{% url 'qr:leaderboard' %}" class="md:text-xl text-[#282319] px-2 md:px-10 py-1 rounded font-bold uppercase custom-btn" >Leaderboard</a>
             </div>
             {% endif %}
+            
         </div>
     </div>
 </header>

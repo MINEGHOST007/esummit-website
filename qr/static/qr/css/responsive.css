@@ -1,0 +1,502 @@
+/* Default font sizes are already set in your CSS */
+
+/* For tablets and smaller screens (up to 768px) */
+@media (max-width: 1448px) {
+    h1, h2, h3, h4 {
+        font-size: 80%;  /* Reduce heading sizes to 80% */
+    }
+
+    .banner-title {
+        font-size: 16px;
+    }
+
+    .banner-text {
+        font-size: 14px;
+    }
+
+    .creating-title {
+        font-size: 13px;
+    }
+
+    .span-dot {
+        font-size: 13px;
+    }
+
+    .btn-text {
+        font-size: 24px;
+    }
+
+    .count-down-title {
+        font-size: 90px;
+    }
+
+    .count-down-number {
+        font-size: 18px;
+    }
+
+    .count-down-wrapper span {
+        font-size: 250px;  /* Adjust large countdown text */
+    }
+
+    .logo-text {
+        font-size: 28px;
+    }
+
+    .nav-btn h1 {
+        font-size: 48px;
+    }
+
+    .step-number {
+        font-size: 35px;
+    }
+
+    .step-title {
+        font-size: 18px;
+    }
+
+    .gameplan-step-text-wrapper h3.step-number {
+        font-size: 30px;
+    }
+
+    .gameplan-step-text-wrapper h4.step-title {
+        font-size: 18px;
+    }
+
+    .sidebar-btn .btn-text {
+        font-size: 28px;
+    }
+
+    .founders-footer-p {
+        font-size: 16px;
+    }
+
+    .game-plan-heading {
+        font-size: 90px;
+    }
+
+    .season-text p {
+        font-size: 45px;
+    }
+
+    .text-combo p {
+        font-size: 50px;
+    }
+
+    .share-list h1 {
+        font-size: 100px;
+    }
+
+    .share-list p {
+        font-size: 48px;
+    }
+
+    .recap-title h2 {
+        font-size: 36px;
+    }
+
+    .recap-title .combo-text h1 {
+        font-size: 60px;
+    }
+
+    .recap-desc {
+        font-size: 20px;
+    }
+
+    .more-text h2 {
+        font-size: 30px;
+    }
+
+    .step-2-footer-middle {
+        font-size: 20px;
+    }
+
+    .step-2-arrow {
+        font-size: 28px;
+    }
+
+    .time-remain .big-text {
+        font-size: 60px;
+    }
+
+    .time-remain .small-text {
+        font-size: 30px;
+    }
+
+    .founders-btn .btn-text {
+        font-size: 28px;
+    }
+
+    .accordion-wrapper-inner.sceond h3.title {
+        font-size: 26px;
+    }
+
+    .accordion-wrapper-inner.sceond h4.label {
+        font-size: 16px;
+    }
+
+    .accordion-wrapper-inner.sceond p.step-desc {
+        font-size: 16px;
+    }
+
+    .text-drow-combo p.text-sum {
+        font-size: 36px;
+    }
+
+    .step-3-result p.result-text {
+        font-size: 45px;
+    }
+
+    .step-3-result p.result-text.text-is-small {
+        font-size: 30px;
+    }
+
+    .share-arrow {
+        width: 50px;
+    }
+
+    .svg-combo {
+        font-size: 20px;
+    }
+
+    .card-number {
+        font-size: 70px;
+    }
+
+    .marquee-item-wrapper {
+        font-size: 14px;
+    }
+}
+
+/* For mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    h1, h2, h3, h4 {
+        font-size: 70%;  /* Reduce heading sizes to 70% */
+    }
+
+    .banner-title {
+        font-size: 14px;
+    }
+
+    .banner-text {
+        font-size: 12px;
+    }
+
+    .creating-title {
+        font-size: 11px;
+    }
+
+    .span-dot {
+        font-size: 12px;
+    }
+
+    .btn-text {
+        font-size: 20px;
+    }
+
+    .count-down-title {
+        font-size: 70px;
+    }
+
+    .count-down-number {
+        font-size: 16px;
+    }
+
+    .count-down-wrapper span {
+        font-size: 200px;  /* Adjust large countdown text */
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .nav-btn h1 {
+        font-size: 36px;
+    }
+
+    .step-number {
+        font-size: 28px;
+    }
+
+    .step-title {
+        font-size: 16px;
+    }
+
+    .gameplan-step-text-wrapper h3.step-number {
+        font-size: 24px;
+    }
+
+    .gameplan-step-text-wrapper h4.step-title {
+        font-size: 16px;
+    }
+
+    .sidebar-btn .btn-text {
+        font-size: 22px;
+    }
+
+    .founders-footer-p {
+        font-size: 14px;
+    }
+
+    .game-plan-heading {
+        font-size: 80px;
+    }
+
+    .season-text p {
+        font-size: 38px;
+    }
+
+    .text-combo p {
+        font-size: 40px;
+    }
+
+    .share-list h1 {
+        font-size: 80px;
+    }
+
+    .share-list p {
+        font-size: 40px;
+    }
+
+    .recap-title h2 {
+        font-size: 30px;
+    }
+
+    .recap-title .combo-text h1 {
+        font-size: 50px;
+    }
+
+    .recap-desc {
+        font-size: 18px;
+    }
+
+    .more-text h2 {
+        font-size: 24px;
+    }
+
+    .step-2-footer-middle {
+        font-size: 18px;
+    }
+
+    .step-2-arrow {
+        font-size: 24px;
+    }
+
+    .time-remain .big-text {
+        font-size: 50px;
+    }
+
+    .time-remain .small-text {
+        font-size: 26px;
+    }
+
+    .founders-btn .btn-text {
+        font-size: 24px;
+    }
+
+    .accordion-wrapper-inner.sceond h3.title {
+        font-size: 24px;
+    }
+
+    .accordion-wrapper-inner.sceond h4.label {
+        font-size: 14px;
+    }
+
+    .accordion-wrapper-inner.sceond p.step-desc {
+        font-size: 14px;
+    }
+
+    .text-drow-combo p.text-sum {
+        font-size: 30px;
+    }
+
+    .step-3-result p.result-text {
+        font-size: 35px;
+    }
+
+    .step-3-result p.result-text.text-is-small {
+        font-size: 25px;
+    }
+
+    .share-arrow {
+        width: 45px;
+    }
+
+    .svg-combo {
+        font-size: 18px;
+    }
+
+    .card-number {
+        font-size: 50px;
+    }
+
+    .marquee-item-wrapper {
+        font-size: 12px;
+    }
+}
+
+/* For very small devices (up to 320px) */
+@media (max-width: 320px) {
+    h1, h2, h3, h4 {
+        font-size: 60%;  /* Reduce heading sizes to 60% */
+    }
+
+    .banner-title {
+        font-size: 12px;
+    }
+
+    .banner-text {
+        font-size: 10px;
+    }
+
+    .creating-title {
+        font-size: 9px;
+    }
+
+    .span-dot {
+        font-size: 10px;
+    }
+
+    .btn-text {
+        font-size: 18px;
+    }
+
+    .count-down-title {
+        font-size: 50px;
+    }
+
+    .count-down-number {
+        font-size: 14px;
+    }
+
+    .count-down-wrapper span {
+        font-size: 150px;  /* Adjust large countdown text */
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .nav-btn h1 {
+        font-size: 28px;
+    }
+
+    .step-number {
+        font-size: 22px;
+    }
+
+    .step-title {
+        font-size: 14px;
+    }
+
+    .gameplan-step-text-wrapper h3.step-number {
+        font-size: 18px;
+    }
+
+    .gameplan-step-text-wrapper h4.step-title {
+        font-size: 14px;
+    }
+
+    .sidebar-btn .btn-text {
+        font-size: 18px;
+    }
+
+    .founders-footer-p {
+        font-size: 12px;
+    }
+
+    .game-plan-heading {
+        font-size: 70px;
+    }
+
+    .season-text p {
+        font-size: 30px;
+    }
+
+    .text-combo p {
+        font-size: 35px;
+    }
+
+    .share-list h1 {
+        font-size: 70px;
+    }
+
+    .share-list p {
+        font-size: 35px;
+    }
+
+    .recap-title h2 {
+        font-size: 28px;
+    }
+
+    .recap-title .combo-text h1 {
+        font-size: 45px;
+    }
+
+    .recap-desc {
+        font-size: 16px;
+    }
+
+    .more-text h2 {
+        font-size: 20px;
+    }
+
+    .step-2-footer-middle {
+        font-size: 16px;
+    }
+
+    .step-2-arrow {
+        font-size: 22px;
+    }
+
+    .time-remain .big-text {
+        font-size: 45px;
+    }
+
+    .time-remain .small-text {
+        font-size: 22px;
+    }
+
+    .founders-btn .btn-text {
+        font-size: 20px;
+    }
+
+    .accordion-wrapper-inner.sceond h3.title {
+        font-size: 22px;
+    }
+
+    .accordion-wrapper-inner.sceond h4.label {
+        font-size: 12px;
+    }
+
+    .accordion-wrapper-inner.sceond p.step-desc {
+        font-size: 12px;
+    }
+
+    .text-drow-combo p.text-sum {
+        font-size: 26px;
+    }
+
+    .step-3-result p.result-text {
+        font-size: 30px;
+    }
+
+    .step-3-result p.result-text.text-is-small {
+        font-size: 20px;
+    }
+
+    .share-arrow {
+        width: 40px;
+    }
+
+    .svg-combo {
+        font-size: 16px;
+    }
+
+    .card-number {
+        font-size: 40px;
+    }
+
+    .marquee-item-wrapper {
+        font-size: 10px;
+    }
+}

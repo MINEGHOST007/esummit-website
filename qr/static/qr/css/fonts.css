@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+    font-family: 'Comedik';
+    src: url('fonts/comedik/Comedik.woff2') format('woff2'),
+         url('fonts/comedik/Comedik.woff') format('woff'),
+         url('fonts/comedik/Comedik.ttf') format('truetype'),
+         url('fonts/comedik/Comedik.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Object Sans Bold';
+    src: url('fonts/ObjectSans/ObjectSans-Heavy.otf') format('opentype'),
+         url('fonts/ObjectSans/ObjectSans-HeavySlanted.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Object Sans';
+    src: url('fonts/ObjectSans/ObjectSans-Regular.otf') format('opentype'),
+         url('fonts/ObjectSans/ObjectSans-Slanted.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Schabo Condensed';
+    src: url('fonts/schabo-condensed/SCHABO-Condensed.otf') format('opentype'),
+         url('fonts/schabo-condensed/SCHABO-Condensed.woff') format('woff'),
+         url('fonts/schabo-condensed/SCHABO-Condensed.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

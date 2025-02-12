@@ -1,0 +1,27 @@
+
+.bg-class{
+    background-image: url(../images/66ff9d3bd441ad25203ef758_noise-repeat-5.jpg);
+}
+
+.custom-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #f5cbff; /* Solid color instead of SVG */
+  width: 200px;
+  height: 60px;
+  border-radius: 10px; /* Matches original SVG's rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.custom-btn:hover {
+  background-color: rgb(255, 186, 252); /* Pink color on hover */
+}
