@@ -2,64 +2,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Hunt | Card</title>
-    <link rel="stylesheet" href="http://127.0.0.1:8000/static/base/css/tailwind.css">
-    <link rel="shortcut icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon" id="faviconTag">
-    <!-- Google font files -->
-    <link rel="stylesheet" href="{% static 'base/css/tailwind.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        @keyframes anim {
-            0%{
-                translate: 0 100%;
-                scale: 0;
-                opacity: .3;
-            }
-            100%{
-                translate: 0 0;
-                scale: 1;
-                opacity: 1;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Hunt | Card</title>
+  <link rel="stylesheet" href="http://127.0.0.1:8000/static/base/css/tailwind.css">
+  <link rel="shortcut icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon" id="faviconTag">
+  <!-- Google font files -->
+  <link rel="stylesheet" href="{% static 'base/css/tailwind.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes anim {
+      0%{
+        translate: 0 100%;
+        scale: 0;
+        opacity: .3;
+      }
+      100%{
+        translate: 0 0;
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body class="bg-[#282319] font-Laila">
-    {% include 'qr/navbar.html' %}
-    {% include 'qr/toaster.html' %}
-    <div class="parent p-5 flex flex-col md:flex-row h-screen items-center justify-center gap-5">
-        <div class="card px-14 animate-[anim_2s_1s_cubic-bezier(.3,1.5,.5,1)_1] [animation-fill-mode:both] max-w-md neu" >
-            {% static "" as baseUrl %}
-            <img src="{{ baseUrl }}qr/images/card{{card.tier}}{{card.identity}}.png" alt="" srcset="" style="background: linear-gradient(145deg, #242017, #2b251b); box-shadow:  7px 7px 19px #1e1a13, -7px -7px 19px #322c1f; border-radius: 11px;">
-        </div>
-        <div class="desc text-orange-300 text-lg text-center font-semibold">
-            {% if duplicate %}
-            <h2 class="my-5">
-                You've already unlocked this QR code! 
-            </h2>
-            <h2 class="my-5">
-                Keep exploring to discover more hidden treasures and earn points on your epic quest
-            </h2>
-            {% else %}
-            <h2 class="my-5">
-                Marvelous! Discover the power of your latest card! 
-            </h2>
-            <h2 class="my-5">
-               {{card.point}} Strength added to your bag! Onward to victory in the QR Hunt!
-            </h2>
-            {% if bonus %}
-            <h2 class="my-5">
-                Level Completed! +25 Bonus Strengths Unlocked! Hurray!
-            </h2>
-            {% endif %}
-            {% endif %}
-            <a href="/qr/profile" class="font-bold bg-yellow-800 px-2 text-sm py-1 rounded">Go to Profile</a>
-        </div>
+  {% include 'qr/navbar.html' %}
+  {% include 'qr/toaster.html' %}
+  <div class="parent p-5 flex flex-col md:flex-row h-screen items-center justify-center gap-5">
+    <!-- Card Image -->
+    <div class="card px-14 animate-[anim_2s_1s_cubic-bezier(.3,1.5,.5,1)_1] [animation-fill-mode:both] max-w-md neu">
+      {% static "" as baseUrl %}
+      <img src="{{ baseUrl }}qr/images/card{{ card.tier }}{{ card.identity }}.png" alt="Card Image" style="background: linear-gradient(145deg, #242017, #2b251b); box-shadow: 7px 7px 19px #1e1a13, -7px -7px 19px #322c1f; border-radius: 11px;">
     </div>
-    {% include 'qr/footer.html' %}
+    <!-- Description / Question Section -->
+    <div class="desc text-orange-300 text-lg text-center font-semibold">
+      {% if duplicate %}
+        <h2 class="my-5">You've already unlocked this QR code!</h2>
+        <h2 class="my-5">Keep exploring to discover more hidden treasures and earn points on your epic quest.</h2>
+        <a href="/qr/profile" class="font-bold bg-yellow-800 px-2 text-sm py-1 rounded">Go to Profile</a>
+      {% else %}
+        {% if success %}
+          <h2 class="my-5">{{ success }}</h2>
+          <h2 class="my-5">{{ card.point }} Strength added to your bag! Onward to victory in the QR Hunt!</h2>
+          {% if bonus %}
+            <h2 class="my-5">Level Completed! +25 Bonus Strengths Unlocked! Hurray!</h2>
+          {% endif %}
+          <a href="/qr/profile" class="font-bold bg-yellow-800 px-2 text-sm py-1 rounded">Go to Profile</a>
+        {% else %}
+          {% if error %}
+            <h2 class="my-5 text-red-500">{{ error }}</h2>
+          {% endif %}
+          <!-- Display the question and answer form -->
+          <h2 class="my-5">{{ question }}</h2>
+          <form method="post" class="flex flex-col items-center gap-3">
+            {% csrf_token %}
+            <input type="text" name="answer" placeholder="Enter your answer" class="px-3 py-2 rounded text-black" required>
+            <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Submit Answer</button>
+          </form>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% include 'qr/footer.html' %}
 </body>
 </html>

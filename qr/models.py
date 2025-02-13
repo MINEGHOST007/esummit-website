@@ -1,9 +1,6 @@
 from django.db import models
-# from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 import json, uuid
-
-# # Create your models here.
 
 MAX_TIER = 5
 
@@ -16,18 +13,19 @@ def initial(n):
 
 def initial_json():
     return json.dumps(initial(MAX_TIER))
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     picture = models.TextField(default='https://ui-avatars.com/api/?name=John+Sha&background=fdba74&color=282319')
     email = models.EmailField(max_length=254)
-    name = models.CharField( max_length=50)
-    registration = models.CharField( max_length=10)
+    name = models.CharField(max_length=50)
+    registration = models.CharField(max_length=10)
     mobile = models.CharField(max_length=15)
-    collections = models.JSONField(default= initial_json)
+    collections = models.JSONField(default=initial_json)
     points = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.name +' | ' + str(self.mobile)
+        return self.name + ' | ' + str(self.mobile)
 
     class Meta:
         verbose_name = 'Profile'
@@ -39,7 +37,8 @@ class Card(models.Model):
     tier = models.IntegerField()
     identity = models.IntegerField()
     point = models.IntegerField()
-    # image = models.ImageField(upload_to='cards/')
+    question = models.TextField(default="What is the question?")
+    correct_answer = models.CharField(max_length=255, default="answer")
 
     class Meta:
         verbose_name = 'Card'
