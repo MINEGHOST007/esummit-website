@@ -876,6 +876,10 @@ svg.founders-shirt-svg {
     position: absolute;
 }
 
+.pink-text{
+    color: var(--color-light);
+}
+
 .gameplan-step-list {
     padding: 2.8125em 0;
 }
@@ -1783,6 +1787,18 @@ li.marquee-list {
 .kikof{
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
+}
+
+.text-style-comedik{
+    font-family: 'Comedik';
+    font-size: 1.263em;
+    color: var(--color-light);
+}
+
+.text-style-schabo{
+    font-family: 'Schabo Condensed';
+    font-size: 1.263em;
+    color: var(--color-light);
 }
 
 svg.question-svg {

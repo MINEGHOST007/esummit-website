@@ -6,6 +6,7 @@ from django.utils import timezone
 from .models import Profile, Card, Qr, Scan
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 import csv, json
 
 BONUS_POINTS = 25
@@ -172,3 +173,7 @@ def generate_qr(request):
 
         return render(request, 'qr/generate_qr.html')
     return redirect('/qr/')
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'qr/generate_qr.html')

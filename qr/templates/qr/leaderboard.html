@@ -29,7 +29,7 @@
 <body class="bg-fbfaff  items-center justify-center min-h-screen bg-[#282319] text-orange-300 font-Laila">
     {% include 'qr/navbar.html' %}
     {% include 'qr/toaster.html' %}
-    <main class=" w-full min-h-screen">
+    <main class="pink-text bg-class w-full min-h-screen justify-center items-center text-center">
         <!-- <div class="w-full flex justify-center pt-20 gap-20">
             <div>
                 <img src="{{profiles.0.picture}}" alt="" class="size-24 p-2 rounded-full mx-auto">
@@ -38,11 +38,13 @@
                 <h1 class="text-2xl font-bold text-center" >Rank : 1</h1>
             </div>
         </div> -->
-        <h1 class="py-10 pt-32 text-3xl font-bold text-orange-300 text-center">
+        <div class="flex flex-col gap-4 list-none pt-20 max-w-xl mx-auto w-4/5">
+        <h2 data-animation="bounce" class="count-down-title mb-0 justify-center items-center text-center">
             Leaderboard
-        </h1>
+          </h2>
+        </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-11/12 mx-auto">
-            <div class="w-full text-sm text-left rtl:text-right text-yellow-100 bg-yellow-900 rounded overflow-hidden grid grid-cols-4 items-center gap-5 p-3 mx-auto" style="grid-template-columns: 50px 2fr 1fr 1fr;">
+            <div class="w-full text-sm text-left rtl:text-right  rounded overflow-hidden grid grid-cols-4 items-center gap-5 p-3 mx-auto" style="grid-template-columns: 50px 2fr 1fr 1fr;">
                         <div></div>
                         <div scope="col" class="basis-2/5 font-bold">
                             Name
@@ -67,7 +69,9 @@
                 {% endfor %}
             </div>
         </div>
-    </main>      
-    {% include 'qr/footer.html' %}
+        
+    </main>  
+        
+    <!-- {% include 'qr/footer.html' %} -->
 </body>
 </html>
