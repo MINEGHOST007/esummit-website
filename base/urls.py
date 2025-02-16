@@ -13,6 +13,7 @@ urlpatterns = [
     path('passes/',passes, name='passes'),
     path('success', successPage, name='successPage'),
     path('coming-soon', comingsoonPage, name='comingsoonPage'),
+    path('qr', qr, name='qr'),
     path('csv', data, name='data'),
 
 ]

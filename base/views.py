@@ -152,8 +152,10 @@ def passes(request):
 
 
 def comingsoonPage(request):
-    return render(request, "pass2.html")
+    return render(request, "comingsoon.html")
 
+def qr(request):
+    return render(request, "qr/home.html")
 
 # @login_required
 def data(request):

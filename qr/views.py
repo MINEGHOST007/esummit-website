@@ -176,4 +176,5 @@ def generate_qr(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, 'qr/generate_qr.html')
+    messages.info(request, 'You have been logged out')
+    return redirect('qr:home')

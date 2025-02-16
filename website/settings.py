@@ -85,7 +85,7 @@ TEMPLATES = [
 ]
 
 AUTHENTICATION_BACKENDS =[
-    # 'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -137,7 +137,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_ID = 1
+SITE_ID = 7
 
 LOGIN_URL = '/accounts/google/login/'
 LOGIN_REDIRECT_URL = '/qr'

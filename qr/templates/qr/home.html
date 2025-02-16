@@ -436,7 +436,7 @@
             <li class="nav-btn-border"></li>
             <li>
               <a
-                href="#your-game-plan"
+                href="/qr/profile"
                 data-navigation-toggle="close"
                 class="nav-btn d-flex align-items-center justify-content-between py-3"
               >
@@ -490,7 +490,7 @@
             <li class="nav-btn-border"></li>
             <li>
               <a
-                href="/coming-soon"
+                href="/qr/result"
                 data-navigation-toggle="close"
                 class="nav-btn d-flex align-items-center justify-content-between py-3"
               >
@@ -544,7 +544,7 @@
              <li class="nav-btn-border"></li>
             <li>
               <a
-                href="https://docs.google.com/forms/d/1F9QDUOS0SjSzVJ-0IyL7WPgYCZOk7NyNUVv8bCdESQk/edit"
+                href="/"
                 data-navigation-toggle="close"
                 class="nav-btn d-flex align-items-center justify-content-between py-3"
               >
@@ -602,7 +602,7 @@
             class="d-flex flex-column gap-2 align-items-start align-items-lg-center"
           >
             <a
-              href="/passes"
+              href="{% url 'qr:logout' %}"
               data-navigation-toggle="close"
               class="sidebar-btn d-flex align-items-center overflow-hidden"
             >
@@ -680,7 +680,7 @@
             class="d-flex flex-column gap-2 align-items-start align-items-lg-center"
           >
             <a
-              href="/passes"
+              href="/qr/scanner"
               data-navigation-toggle="close"
               class="sidebar-btn d-flex align-items-center overflow-hidden"
             >
@@ -1067,6 +1067,9 @@
                             <p
                             class="btn-text sidebar-cta position-relative z-1 mb-0"
                             >
+                            <a
+                            href="/qr/register"
+                          >
                             Register
                             </p>
                         </div>
