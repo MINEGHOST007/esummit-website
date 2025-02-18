@@ -137,7 +137,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_ID = 7
+SITE_ID = 2
 
 LOGIN_URL = '/accounts/google/login/'
 LOGIN_REDIRECT_URL = '/qr'
