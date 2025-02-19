@@ -601,6 +601,7 @@
           <div
             class="d-flex flex-column gap-2 align-items-start align-items-lg-center"
           >
+          {% if user.is_authenticated %}
             <a
               href="{% url 'qr:logout' %}"
               data-navigation-toggle="close"
@@ -676,6 +677,8 @@
               </div>
             </a>
           </div>
+          {% endif %}
+
           <div
             class="d-flex flex-column gap-2 align-items-start align-items-lg-center"
           >
@@ -984,6 +987,7 @@
                 </p>
               </div>
             </div>
+            {% if not user.is_authenticated %}
                 <div class="step-btn-wrapper">
                     <a href="#past-speakers">
                     <div class="founders-btn">
@@ -1077,7 +1081,7 @@
                     </div>
                     </a>
                 </div>
-                
+                {% endif %}
             <div
               data-animation="bounce"
               class="count-down-right-text d-flex justify-content-end"
