@@ -14,7 +14,7 @@ function success(result) {
     // document.getElementById('scan-reader').remove();
     // document.getElementById('qr-form').submit();
     console.log(result)
-    window.location.href = `${result}`;
+    window.location.href = `scan/${result}`;
 }
 
 function error(error){
