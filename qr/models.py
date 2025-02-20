@@ -37,8 +37,6 @@ class Card(models.Model):
     tier = models.IntegerField()
     identity = models.IntegerField()
     point = models.IntegerField()
-    question = models.TextField(default="What is the question?")
-    correct_answer = models.CharField(max_length=255, default="answer")
 
     class Meta:
         verbose_name = 'Card'
@@ -66,6 +64,7 @@ class Qr(models.Model):
 class Scan(models.Model):
     qr = models.ForeignKey(Qr, on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    
     class Meta:
         unique_together = ['qr', 'profile']
         verbose_name = 'Scan'

@@ -63,7 +63,8 @@ def scan(request, code):
     context = {}
     profile = Profile.objects.filter(user=request.user).first() 
     if profile is None:
-        return redirect('/qr/profile')
+        messages.error(request, "Please register first.")
+        return redirect('/qr/register')
     context['profile'] = profile
 
     try:
@@ -75,40 +76,27 @@ def scan(request, code):
     card = qr.card
     context['card'] = card
 
-    # Prevent duplicate scans for the same card
-    if Scan.objects.filter(profile=profile, qr__card=card).exists():
+    # Prevent duplicate scans for the same QR
+    if Scan.objects.filter(profile=profile, qr=qr).exists():
         context['duplicate'] = True
         messages.info(request, "You have already scanned this card.")
         return render(request, 'qr/scan.html', context)
 
-    # GET request: show the question form
-    if request.method == "GET":
-        context['question'] = card.question
-        return render(request, 'qr/scan.html', context)
+    # Award points and record the scan directly
+    Scan.objects.create(profile=profile, qr=qr)
+    profile.points += card.point
 
-    # POST request: check the answer submitted by the user
-    if request.method == "POST":
-        user_answer = request.POST.get('answer', '').strip()
-        if user_answer.lower() == card.correct_answer.lower():
-            # Answer is correct; record scan and award points
-            Scan.objects.create(profile=profile, qr=qr)
-            profile.points += card.point
+    collection_obj = json.loads(profile.collections)
+    bonus = checkBonus(collection_obj, card)
+    if bonus:
+        profile.points += BONUS_POINTS
+    context['bonus'] = bonus
 
-            collection_obj = json.loads(profile.collections)
-            bonus = checkBonus(collection_obj, card)
-            if bonus:
-                profile.points += BONUS_POINTS
-            context['bonus'] = bonus
+    profile.collections = json.dumps(collection_obj)
+    profile.save()
 
-            profile.collections = json.dumps(collection_obj)
-            profile.save()
-
-            context['success'] = "Correct answer! Points have been awarded."
-        else:
-            context['error'] = "Incorrect answer. Please try again."
-
-        context['question'] = card.question
-        return render(request, 'qr/scan.html', context)
+    context['success'] = f"Card '{card.name}' collected! Points awarded: {card.point + (BONUS_POINTS if bonus else 0)}"
+    return render(request, 'qr/scan.html', context)
 
 @login_required 
 def profile(request):

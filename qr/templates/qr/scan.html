@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QR Hunt | Card</title>
   <link rel="stylesheet" href="http://127.0.0.1:8000/static/base/css/tailwind.css">
-  
-  
-
   <link rel="shortcut icon" href="{% static 'base/images/favicon.ico' %}" type="image/x-icon" id="faviconTag">
-  <!-- Google font files -->
   <link rel="stylesheet" href="{% static 'base/css/tailwind.css' %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,33 +36,23 @@
       {% static "" as baseUrl %}
       <img src="{{ baseUrl }}qr/images/card{{ card.tier }}{{ card.identity }}.png" alt="Card Image" style="background: linear-gradient(145deg, #242017, #2b251b); box-shadow: 7px 7px 19px #1e1a13, -7px -7px 19px #322c1f; border-radius: 11px;">
     </div>
-    <!-- Description / Question Section -->
+    <!-- Description Section -->
     <div class="desc text-pink-300 text-lg text-center font-semibold">
       {% if duplicate %}
         <h2 class="my-5">You've already unlocked this QR code!</h2>
         <h2 class="my-5">Keep exploring to discover more hidden treasures and earn points on your epic quest.</h2>
-        <a href="/qr/profile" class="font-bold bg-pink-800 px-2 text-sm py-1 rounded">Go to Profile</a>
-      {% else %}
-        {% if success %}
-          <h2 class="my-5">{{ success }}</h2>
-          <h2 class="my-5">{{ card.point }} Strength added to your bag! Onward to victory in the QR Hunt!</h2>
-          {% if bonus %}
-            <h2 class="my-5">Level Completed! +25 Bonus Strengths Unlocked! Hurray!</h2>
-          {% endif %}
-          <a href="/qr/profile" class="font-bold bg-pink-800 px-2 text-sm py-1 rounded">Go to Profile</a>
-        {% else %}
-          {% if error %}
-            <h2 class="my-5 text-red-500">{{ error }}</h2>
-          {% endif %}
-          <!-- Display the question and answer form -->
-          <h2 class="my-5">{{ question }}</h2>
-          <form method="post" class="flex flex-col items-center gap-3">
-            {% csrf_token %}
-            <input type="text" name="answer" placeholder="Enter your answer" class="px-3 py-2 rounded text-black" required>
-            <button type="submit" class="bg-pink-800 text-pink-300 px-4 py-2 rounded">Submit Answer</button>
-          </form>
+      {% elif success %}
+        <h2 class="my-5">{{ success }}</h2>
+        <h2 class="my-5">{{ card.point }} Strength added to your bag! Onward to victory in the QR Hunt!</h2>
+        {% if bonus %}
+          <h2 class="my-5">Level Completed! +25 Bonus Strengths Unlocked! Hurray!</h2>
         {% endif %}
+      {% elif error %}
+        <h2 class="my-5 text-red-500">{{ error }}</h2>
+      {% else %}
+        <h2 class="my-5">Scan the QR code to unlock the card and collect points!</h2>
       {% endif %}
+      <a href="/qr/profile" class="font-bold bg-pink-800 px-2 text-sm py-1 rounded">Go to Profile</a>
     </div>
   </div>
   {% include 'qr/footer.html' %}
