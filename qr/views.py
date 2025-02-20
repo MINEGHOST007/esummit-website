@@ -147,7 +147,7 @@ def generate_qr(request):
         if request.method == 'POST':
             if Qr.objects.all().count() == 0:
                 for card in Card.objects.all():
-                    for i in range(7):
+                    for i in range(10):
                         Qr.objects.create(card=card)
                         
             response = HttpResponse(content_type='text/csv')
