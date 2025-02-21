@@ -19,7 +19,7 @@ function success(result) {
     
     if (result.startsWith(baseUrl)) {
         const uniqueCode = result.substring(baseUrl.length).split('/')[0];
-        window.location.href = `/scan/${uniqueCode}`;
+        window.location.href = `/qr/scan/${uniqueCode}`;
     }
 }
 
